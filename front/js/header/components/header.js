@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import Link from "next/link";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -7,7 +8,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import Drawer from './drawer';
+import Drawer from "./drawer";
 
 const drawerWidth = 240;
 
@@ -51,6 +52,10 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginRight: 0,
   },
+  link: {
+    textDecoration: "none",
+    color: "#fff",
+  },
 }));
 
 export default function PersistentDrawerRight(props) {
@@ -61,7 +66,6 @@ export default function PersistentDrawerRight(props) {
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-
 
   return (
     <div className={classes.root}>
@@ -74,7 +78,9 @@ export default function PersistentDrawerRight(props) {
       >
         <Toolbar>
           <Typography variant="h6" noWrap className={classes.title}>
-            Next test
+            <Link href={"/"}>
+              <a className={classes.link}>Next test</a>
+            </Link>
           </Typography>
           <IconButton
             color="inherit"
@@ -95,7 +101,7 @@ export default function PersistentDrawerRight(props) {
         <div className={classes.drawerHeader} />
         {children}
       </main>
-        <Drawer open={open} setOpen={setOpen} />
+      <Drawer open={open} setOpen={setOpen} />
     </div>
   );
 }
