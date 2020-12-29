@@ -29,7 +29,7 @@ export default function SpacingGrid() {
               title={"ポケモン情報検索"}
               englishTitle={"Search pokemon info"}
               explain={"ポケモンの各情報を知りたい方はこちらを選択ください"}
-              linkParam={'/test'}
+              linkParam={'/search/pokemon'}
             />
           </Grid>
         </Grid>
